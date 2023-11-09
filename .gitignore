@@ -5,7 +5,10 @@ sites
 themes
 autoload.php
 example.gitignore
-*.php
+autoload.php
+index.php
+update.php
+.ht.router.php
 *.txt
 *.md
 web.config
