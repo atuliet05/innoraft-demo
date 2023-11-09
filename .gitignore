@@ -1,0 +1,15 @@
+core/
+modules/contrib/
+profiles/
+sites
+themes
+autoload.php
+example.gitignore
+*.php
+*.txt
+*.md
+web.config
+css.lintrc
+.htaccess
+.eslintrc.json
+.eslintignore

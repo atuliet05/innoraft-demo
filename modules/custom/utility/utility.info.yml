@@ -1,0 +1,6 @@
+name: utility
+description: Utility Module
+type: module
+package: custom
+core_version_requirement: ^9 || ^10
+version: 10.x

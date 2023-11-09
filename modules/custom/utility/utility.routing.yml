@@ -1,0 +1,16 @@
+dashboard.page:
+  path: '/dashboard'
+  defaults: 
+    _controller: '\Drupal\utility\Controller\DashboardController::dashboardPage'
+    _title: 'Dashboard'
+  requirements:
+    _permission: 'access content'
+
+export.page:
+  path: '/export'
+  defaults: 
+    _controller: '\Drupal\utility\Controller\DashboardController::exportPage'
+    _title: 'Dashboard'
+  requirements:
+    _permission: 'access content'
+ 
