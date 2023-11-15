@@ -181,4 +181,31 @@ class DashboardController extends ControllerBase {
         fclose($output);  
         exit;
     }
+
+
+    function reportPage($node_id){
+        $article = \Drupal::entityTypeManager()->getStorage('node')->load($node_id);
+        $paragraph_field_items = $article->get('field_faq_section')->referencedEntities();
+        $html = '<div class="faq-container">';
+        foreach ($paragraph_field_items as $paragraph) {
+
+            // Get the translation
+ $paragraph = \Drupal::service('entity.repository')->getTranslationFromContext($paragraph);
+              
+            $description = [
+                '#type' => 'processed_text',
+                '#text' => $paragraph->get('field_description')->value,
+                '#format' => 'basic_html',
+            ];
+            $title = $paragraph->get('field_title')->value;
+            $description = $paragraph->get('field_description')->value;
+            
+            $html .= "<div class='title-faq'>$title</div><div class='faq-des'>$description</div>";
+          }
+
+        $html .= '</div>';
+$mpdf = new \Mpdf\Mpdf(['tempDir' => 'sites/default/files/tmp']); $mpdf->WriteHTML($html);
+$mpdf->Output("faq.pdf", "D");
+Exit;
+    }
 }

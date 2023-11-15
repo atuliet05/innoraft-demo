@@ -14,3 +14,10 @@ export.page:
   requirements:
     _permission: 'access content'
  
+report.page:
+  path: '/gen-pdf/{node_id}'
+  defaults: 
+    _controller: '\Drupal\utility\Controller\DashboardController::reportPage'
+    _title: 'Dashboard'
+  requirements:
+    _permission: 'access content'

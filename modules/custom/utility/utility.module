@@ -4,3 +4,15 @@ function utility_form_search_form_alter(&$form, &$form_state, $form_id) {
  
   unset($form['form_build_id'], $form['form_id']);
 }
+
+/**
+ * Implements hook_theme().
+ */
+function utility_theme() {
+    return array(
+        'demo_bold_formatter' => array(
+            'variables' => array('var' => NULL),
+            'template' => 'demo-bold-formatter',
+        ),
+    );
+}
