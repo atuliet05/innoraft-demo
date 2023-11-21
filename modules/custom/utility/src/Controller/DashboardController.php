@@ -204,7 +204,8 @@ class DashboardController extends ControllerBase {
           }
 
         $html .= '</div>';
-$mpdf = new \Mpdf\Mpdf(['tempDir' => 'sites/default/files/tmp']); $mpdf->WriteHTML($html);
+$mpdf = new \Mpdf\Mpdf(['tempDir' => 'sites/default/files/tmp']); 
+$mpdf->WriteHTML($html);
 $mpdf->Output("faq.pdf", "D");
 Exit;
     }
